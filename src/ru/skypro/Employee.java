@@ -5,13 +5,15 @@ public class Employee {
     private String employeeFullName;
     private String employeeDepartment;
     private int employeeSalary;
-    private static int id;
+    private int id;
+
+    private static int counter;
 
     public Employee(String employeeFullName, String employeeDepartment, int employeeSalary) {
-        id++;
         this.employeeFullName = employeeFullName;
         this.employeeDepartment = employeeDepartment;
         this.employeeSalary = employeeSalary;
+        this.id = counter++;
     }
 
     public String getEmployeeFullName() {
@@ -26,10 +28,6 @@ public class Employee {
         return employeeSalary;
     }
 
-    public static int getId() {
-        return id;
-    }
-
     public void setEmployeeFullName(String employeeFullName) {
         this.employeeFullName = employeeFullName;
     }
@@ -40,6 +38,14 @@ public class Employee {
 
     public void setEmployeeSalary(int employeeSalary) {
         this.employeeSalary = employeeSalary;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override
